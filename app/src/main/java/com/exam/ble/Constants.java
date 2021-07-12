@@ -12,10 +12,14 @@ public class Constants {
 
 //    public static String SERVICE_STRING = "CB660002-4339-FF22-A1ED-DEBFED27BDB4";
     public static String SERVICE_STRING = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
+//    public static String SERVICE_STRING = "2b36ec00-00ad-4ffc-bd74-57890eef9bb2";
+
     public static final UUID SERVICE_UUID = UUID.fromString(SERVICE_STRING);
 //    public static String CHARACTERISTIC_UUID = "CB660004-4339-FF22-A1ED-DEBFED27BDB4";
-    public static String CHARACTERISTIC_UUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
+    public static String CHARACTERISTIC_UUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
+//    public static String CHARACTERISTIC_UUID = "2b36ec00-00ad-4ffc-bd74-57890eef9bb2";
+
 //    public static String CONFIG_UUID = "00005609-0000-1001-8080-00705c9b34cb";
-    public static String CONFIG_UUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
+    public static String CONFIG_UUID = "00002902-0000-1000-8000-00805f9b34fb";
 
 }

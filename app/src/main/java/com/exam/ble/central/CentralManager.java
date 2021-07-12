@@ -361,6 +361,11 @@ public class CentralManager {
             // Set CharacteristicNotification
             BluetoothGattCharacteristic cmd_characteristic = BluetoothUtils.findCharacteristic(bleGatt, CHARACTERISTIC_UUID);
             _gatt.setCharacteristicNotification(cmd_characteristic, true);
+
+            for (BluetoothGattDescriptor descriptor:cmd_characteristic.getDescriptors()){
+                Log.e(TAG, "BluetoothGattDescriptor: "+descriptor.getUuid().toString());
+            }
+
             // 리시버 설정
             BluetoothGattDescriptor descriptor = cmd_characteristic.getDescriptor(UUID.fromString(CONFIG_UUID));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
