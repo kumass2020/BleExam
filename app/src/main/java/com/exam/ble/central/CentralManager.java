@@ -82,7 +82,7 @@ public class CentralManager {
         BluetoothManager ble_manager;
         ble_manager = (BluetoothManager) mContext.getSystemService(Context.BLUETOOTH_SERVICE);
         // set ble adapter
-        bleAdapter = ble_manager.getAdapter();
+        BluetoothAdapter bleAdapter = ble_manager.getAdapter();
     }
 
     /**
@@ -251,7 +251,7 @@ public class CentralManager {
             Log.e(TAG, "Success to write command");
         } else {
             Log.e(TAG, "Failed to write command : " + cmd_characteristic.getUuid());
-            Log.e(TAG, "Failed to write command");
+//            Log.e(TAG, "Failed to write command");
             listener.onStatusMsg("Failed to write command");
             disconnectGattServer();
         }
@@ -361,11 +361,6 @@ public class CentralManager {
             // Set CharacteristicNotification
             BluetoothGattCharacteristic cmd_characteristic = BluetoothUtils.findCharacteristic(bleGatt, CHARACTERISTIC_UUID);
             _gatt.setCharacteristicNotification(cmd_characteristic, true);
-
-            for (BluetoothGattDescriptor descriptor:cmd_characteristic.getDescriptors()){
-                Log.e(TAG, "BluetoothGattDescriptor: "+descriptor.getUuid().toString());
-            }
-
             // 리시버 설정
             BluetoothGattDescriptor descriptor = cmd_characteristic.getDescriptor(UUID.fromString(CONFIG_UUID));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
