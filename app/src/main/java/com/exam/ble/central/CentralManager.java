@@ -82,7 +82,7 @@ public class CentralManager {
         BluetoothManager ble_manager;
         ble_manager = (BluetoothManager) mContext.getSystemService(Context.BLUETOOTH_SERVICE);
         // set ble adapter
-        BluetoothAdapter bleAdapter = ble_manager.getAdapter();
+        bleAdapter = ble_manager.getAdapter();
     }
 
     /**
